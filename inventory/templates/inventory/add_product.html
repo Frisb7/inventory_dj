@@ -1,0 +1,67 @@
+{% extends 'inventory/main.html' %}
+{% block content %}
+    <!-- <hr>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-row">
+        <div class="col-2">
+            Procuct name:
+            <input type="text" class="form-control" placeholder="Name" id='name'>
+        </div>
+        <div class="col-2">
+            Cost:
+            <input type="text" class="form-control" placeholder="Cost" id='cost'>
+        </div>
+        <div class="col-2">
+            Stock:
+            <input type="text" class="form-control" placeholder="Stock" id='stock'>
+        </div>
+        <div class="col-2">
+            Discount:
+            <select class="custom-select mr-sm-2" id="discount">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            </select>
+        </div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-dark">Add/Update Product</button>
+        </div>
+        </div>
+    </form> -->
+    <form class="add_update" method="POST">
+        {% csrf_token %}
+        <div >
+            <tr><th><label for="id_name">Name:</label></th>
+            <td><input type="text" class="form-control" name="name" maxlength="100" required id="id_name"></td></tr>
+        </div>
+        <div >
+            <tr><th><label for="id_cost">Cost:</label></th>
+            <td><input type="number" class="form-control" name="cost" required id="id_cost"></td></tr>
+        </div>
+        <div >
+            <tr><th><label for="id_stock">Stock:</label></th>
+            <td><input type="number" class="form-control" name="stock" required id="id_stock"></td></tr>
+        </div>
+        <div >
+            <tr><th><label for="id_discount">Discount:</label></th>
+            <td><select class="form-control" name="discount" required id="id_discount">
+            <option value="" selected>---------</option>
+            <option value="yes">yes</option>
+            <option value="no">no</option>
+            </select></td></tr>
+        </div>
+        <div >
+            <button type="submit" class="btn btn-dark">Add Product</button>
+        </div>
+    </form>
+
+    <style>
+        .add_update{
+            margin: auto;
+            margin-top: 80px;
+            margin-bottom: 5%;
+            width: 70%;
+            line-height: 50px;
+        }
+    </style>
+{% endblock %}

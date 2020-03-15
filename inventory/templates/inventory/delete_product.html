@@ -1,0 +1,20 @@
+{% extends 'inventory/main.html' %}
+{% block content %}
+    <form class="form" method="POST">
+        {% csrf_token %}
+        <p> Are you sure you want to DELETE "{{product}}" ?</p>
+        <input type="submit" name="Confirm" id='submit' class="btn btn-danger" value="Delete">
+        <a href="{% url 'home'%}" class="btn btn-success" role="button" id='add'>Cancle</a>
+    </form>
+    <style>
+        .form{
+            margin: auto;
+            width: 80%;
+            margin-top: 80px;
+            font-size: 30px;
+        }
+        #submit{
+            font-size: 16px;
+        }
+    </style>
+{% endblock %}

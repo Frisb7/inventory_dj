@@ -1,0 +1,40 @@
+{% extends 'inventory/main.html' %}
+{% block content %}
+    <form class="form" method="POST">
+        {% csrf_token %}
+        <div class="update">
+            {{form}}
+            <input type="submit" name="Update" value="Update" class="btn btn-success" id="btn">
+        </div>
+    </form>
+    <style>
+        .form{
+            margin-top: 80px;
+        }
+        .update{
+            margin: auto;
+            width: 80%;
+            line-height: 30px;
+        }
+        input{
+            border-radius: 3px;
+            border-width: .5px;
+            border-style: solid;
+            width: 100%;
+            padding-left: 5px;
+        }
+        label{
+            line-height: 40px;
+            width: 70%
+        }
+        #id_discount{
+            position: relative;
+            left: -70%;
+            top: 30px;
+        }
+        #btn{
+            position: relative;
+            top: 30px;
+        }
+    </style>
+{% endblock %}
